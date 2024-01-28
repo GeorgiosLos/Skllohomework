@@ -1,7 +1,13 @@
-answer = 22
-question = "How much does  15 +7? "
 
-while int(input(question)) != answer:
-    pass
-
-print("Correct")
+for fizzbuzz in range(1000):
+    if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
+        print("fizzbuzz")
+        continue
+    elif fizzbuzz % 3 == 0:
+        print("fizz")
+        continue
+    elif fizzbuzz % 5 == 0:
+        print("buzz")
+        continue
+    print(fizzbuzz) 
+	
