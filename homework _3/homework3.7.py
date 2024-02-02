@@ -13,7 +13,7 @@ elif num > 1:
             
             break
 
-    
+    12
     if flag:
         print(num, "is not a prime number")
     else:
