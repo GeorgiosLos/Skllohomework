@@ -1,0 +1,4 @@
+Name,ExamScores
+John,{"math": 85, "science": 90, "history": 75}
+Jane,{"math": 78, "science": 88, "history": 82}
+Alice,{"math": 92, "science": 85, "history": 90}

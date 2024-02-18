@@ -1,0 +1,37 @@
+import csv
+
+def calculate_total_salary(base_salary, bonus):
+    return base_salary + bonus
+
+def main():
+    
+    with open("/home/hp/Skillohomework/homework_5/homework9/employee_data.csv", "r") as csvfile:
+        reader = csv.DictReader(csvfile)
+        
+        
+        total_salaries_data = []
+
+        for row in reader:
+            
+            employee_id = row['EmployeeID']
+            base_salary = float(row['BaseSalary'])
+            bonus = float(row['Bonus'])
+
+           
+            total_salary = calculate_total_salary(base_salary, bonus)
+
+            
+            total_salaries_data.append({'EmployeeID': employee_id, 'TotalSalary': total_salary})
+
+  
+    with open("total_salaries.csv", "w", newline="") as csvfile:
+        fieldnames = ['EmployeeID', 'TotalSalary']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+        writer.writerows(total_salaries_data)
+
+    print("Total salaries have been calculated and saved in 'total_salaries.csv'.")
+
+if __name__ == "__main__":
+    main()
